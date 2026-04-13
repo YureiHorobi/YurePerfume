@@ -13,7 +13,7 @@ const PRODUCTS = [
     brand: "Zimaya",
     category: "dubai",
     price: 415000,
-    image: "js/sharaf.jpg",       // ← ganti nama file sesuai milikmu
+    image: "js/sharaf.js",       // ← ganti nama file sesuai milikmu
     desc: "Aroma manis gourmand, hangat, dan intens, menonjolkan perpaduan dates (kurma), vanila, praline, dan sentuhan buzzy (seperti konyak) yang mewah.",
     volume: "100 ml",
     concentration: "Extrait De Parfum",
