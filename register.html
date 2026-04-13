@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daftar Akun — Yurei.Perfume</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Yurei<span>.</span>Perfume</a>
+    <div class="nav-actions">
+      <a href="cart.html" class="btn-cart">
+        🛒 <span class="cart-badge" id="cartBadge">0</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<div class="auth-page">
+  <div class="auth-card">
+    <div class="auth-logo">Yurei<span>.</span>Perfume</div>
+    <div class="auth-sub">Buat akun baru — gratis!</div>
+
+    <form id="registerForm">
+      <div class="form-group">
+        <label class="form-label" for="regName">Nama Lengkap</label>
+        <input
+          type="text"
+          class="form-input"
+          id="regName"
+          placeholder="Nama kamu"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="regEmail">Email</label>
+        <input
+          type="email"
+          class="form-input"
+          id="regEmail"
+          placeholder="contoh@email.com"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="regPass">Password</label>
+        <input
+          type="password"
+          class="form-input"
+          id="regPass"
+          placeholder="Minimal 6 karakter"
+          required
+          minlength="6"
+        />
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="regPass2">Konfirmasi Password</label>
+        <input
+          type="password"
+          class="form-input"
+          id="regPass2"
+          placeholder="Ulangi password"
+          required
+        />
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-full" style="margin-top:8px">
+        Daftar Sekarang →
+      </button>
+    </form>
+
+    <div class="auth-switch">
+      Sudah punya akun? <a href="login.html">Masuk di sini</a>
+    </div>
+  </div>
+</div>
+
+<div class="toast-container" id="toastContainer"></div>
+<script src="js/script.js"></script>
+</body>
+</html>

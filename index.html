@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yurei.Perfume — Toko Parfum Online</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ===== USER BAR ===== -->
+<div class="user-bar" id="userBar">
+  👤 Mode <strong>Tamu</strong> &nbsp;|&nbsp;
+  <a href="login.html" style="color:var(--accent);font-weight:500;">Login</a> untuk checkout
+</div>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Yurei<span>.</span>Perfume</a>
+
+    <ul class="nav-menu">
+      <li><a href="index.html" class="active">Beranda</a></li>
+      <li><a href="index.html#kategori">Kategori</a></li>
+      <li><a href="feedback.html">Kritik & Saran</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <!-- Tombol keranjang -->
+      <a href="cart.html" class="btn-cart">
+        🛒 Keranjang
+        <span class="cart-badge" id="cartBadge">0</span>
+      </a>
+      <!-- Login button -->
+      <a href="login.html" class="btn-nav-login" id="navLoginBtn">Login</a>
+    </div>
+
+    <!-- Hamburger mobile -->
+    <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">🏠 Beranda</a>
+  <a href="cart.html">🛒 Keranjang</a>
+  <a href="feedback.html">💬 Kritik & Saran</a>
+  <a href="login.html">🔑 Login / Daftar</a>
+</div>
+
+<!-- ===== HERO SECTION ===== -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        ✦ Koleksi Terbaru 2025
+      </div>
+      <h1 class="hero-title display">
+        Temukan Aroma<br>yang <em>Mencerminkan</em><br>Kepribadianmu
+      </h1>
+      <p class="hero-desc">
+        Yurei.Perfume menghadirkan koleksi parfum pilihan dari lokal nusantara, 
+        eksotis Dubai, hingga brand desainer premium — semua dalam satu platform.
+      </p>
+      <div class="hero-cta">
+        <a href="#produk" class="btn btn-primary btn-lg">Lihat Koleksi</a>
+        <a href="#kategori" class="btn btn-outline btn-lg">Jelajahi Kategori</a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="stat-num display">8+</div>
+          <div class="stat-label">Produk Unggulan</div>
+        </div>
+        <div>
+          <div class="stat-num display">3</div>
+          <div class="stat-label">Kategori</div>
+        </div>
+        <div>
+          <div class="stat-num display">100%</div>
+          <div class="stat-label">Asli & Berkualitas</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero Visual (ilustrasi botol parfum SVG) -->
+    <div class="hero-visual">
+      <div class="hero-bottle-wrap">
+        <!-- SVG Botol Parfum Sederhana -->
+        <svg class="hero-bottle-svg" viewBox="0 0 120 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Tutup botol -->
+          <rect x="42" y="10" width="36" height="10" rx="4" fill="#6b7fa3" opacity=".7"/>
+          <!-- Leher botol -->
+          <rect x="50" y="20" width="20" height="20" rx="3" fill="#6b7fa3" opacity=".5"/>
+          <!-- Badan botol -->
+          <rect x="20" y="40" width="80" height="130" rx="20" fill="#ffffff" stroke="#6b7fa3" stroke-width="2" opacity=".9"/>
+          <!-- Refleksi -->
+          <rect x="30" y="55" width="12" height="60" rx="6" fill="#6b7fa3" opacity=".15"/>
+          <!-- Label -->
+          <rect x="30" y="100" width="60" height="50" rx="8" fill="#eef1f7" opacity=".8"/>
+          <text x="60" y="122" text-anchor="middle" font-family="serif" font-size="9" fill="#4f6289" font-weight="600">YUREI</text>
+          <text x="60" y="136" text-anchor="middle" font-family="serif" font-size="6" fill="#6b7fa3">PERFUME</text>
+          <!-- Spray head -->
+          <rect x="48" y="18" width="24" height="6" rx="3" fill="#4f6289" opacity=".6"/>
+        </svg>
+
+        <!-- Floating tags -->
+        <div class="floating-tag floating-tag-1">
+          <div class="tag-label">Kategori</div>
+          <div class="tag-val">🌿 Lokal · 🕌 Dubai</div>
+        </div>
+        <div class="floating-tag floating-tag-2">
+          <div class="tag-label">Mulai dari</div>
+          <div class="tag-val">Rp 95.000</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SEARCH SECTION ===== -->
+<section class="search-section">
+  <div class="container">
+    <div class="search-wrap">
+      <div class="search-input-wrap">
+        <span class="icon">🔍</span>
+        <input
+          type="text"
+          class="search-input"
+          id="searchInput"
+          placeholder="Cari parfum, brand, atau aroma favorit..."
+        />
+      </div>
+      <button class="btn btn-primary" id="searchBtn">Cari</button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== KATEGORI SECTION ===== -->
+<section class="categories-section" id="kategori">
+  <div class="container">
+    <div class="section-title display">Kategori</div>
+    <p class="section-sub">Pilih kategori untuk menemukan parfum yang tepat</p>
+
+    <div class="category-tabs">
+      <button class="cat-tab active" data-cat="all">
+        <span class="cat-icon">✦</span> Semua
+      </button>
+      <button class="cat-tab" data-cat="lokal">
+        <span class="cat-icon">🌿</span> Parfum Lokal
+      </button>
+      <button class="cat-tab" data-cat="dubai">
+        <span class="cat-icon">🕌</span> Parfum Dubai
+      </button>
+      <button class="cat-tab" data-cat="desainer">
+        <span class="cat-icon">💎</span> Parfum Desainer
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRODUK SECTION ===== -->
+<section class="products-section" id="produk">
+  <div class="container">
+    <div class="products-header">
+      <div>
+        <div class="section-title display">Koleksi Parfum</div>
+        <p class="section-sub" style="margin-bottom:0">Pilihan terbaik untuk setiap suasana</p>
+      </div>
+      <div class="product-count" id="productCount">— produk</div>
+    </div>
+
+    <!-- Grid produk — diisi oleh JS -->
+    <div class="product-grid" id="productGrid">
+      <!-- Produk dirender oleh script.js -->
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Yurei<span>.</span>Perfume</div>
+        <p class="footer-desc">
+          Platform parfum online yang menghadirkan aroma terbaik dari seluruh dunia langsung ke pintumu.
+          Kualitas terjamin, harga terjangkau.
+        </p>
+      </div>
+      <div>
+        <div class="footer-heading">Halaman</div>
+        <ul class="footer-links">
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="cart.html">Keranjang</a></li>
+          <li><a href="feedback.html">Kritik & Saran</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="register.html">Daftar</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-heading">Kategori</div>
+        <ul class="footer-links">
+          <li><a href="#">Parfum Lokal</a></li>
+          <li><a href="#">Parfum Dubai</a></li>
+          <li><a href="#">Parfum Desainer</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Yurei.Perfume. Proyek Sekolah.</span>
+      <span>Dibuat dengan ❤️ menggunakan HTML, CSS & JS</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== TOAST CONTAINER ===== -->
+<div class="toast-container" id="toastContainer"></div>
+
+<script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kritik & Saran — Yurei.Perfume</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- USER BAR -->
+<div class="user-bar" id="userBar"></div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Yurei<span>.</span>Perfume</a>
+    <ul class="nav-menu">
+      <li><a href="index.html">Beranda</a></li>
+      <li><a href="index.html#kategori">Kategori</a></li>
+      <li><a href="feedback.html" class="active">Kritik & Saran</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="cart.html" class="btn-cart">
+        🛒 Keranjang
+        <span class="cart-badge" id="cartBadge">0</span>
+      </a>
+      <a href="login.html" class="btn-nav-login" id="navLoginBtn">Login</a>
+    </div>
+    <button class="hamburger" id="hamburgerBtn"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">🏠 Beranda</a>
+  <a href="cart.html">🛒 Keranjang</a>
+  <a href="feedback.html">💬 Kritik & Saran</a>
+  <a href="login.html">🔑 Login / Daftar</a>
+</div>
+
+<!-- PAGE HEADER -->
+<div class="page-header" style="padding-top:calc(var(--nav-h) + 40px)">
+  <div class="container">
+    <nav class="breadcrumb" style="margin-bottom:12px">
+      <a href="index.html">Beranda</a>
+      <span class="sep">›</span>
+      <span class="current">Kritik & Saran</span>
+    </nav>
+    <div class="section-title display">Kritik & Saran</div>
+    <p style="color:var(--text-light);font-size:.9rem;margin-top:4px">
+      Pendapatmu sangat berarti bagi kami untuk terus berkembang 💬
+    </p>
+  </div>
+</div>
+
+<!-- MAIN -->
+<main style="padding:40px 0 80px">
+  <div class="container">
+    <div class="feedback-grid">
+
+      <!-- Form Input -->
+      <div class="feedback-card">
+        <h2 style="font-size:1.1rem;font-weight:600;margin-bottom:6px">Tulis Ulasan</h2>
+        <p style="font-size:.875rem;color:var(--text-light);margin-bottom:24px">
+          Bagikan pengalamanmu berbelanja di Yurei.Perfume
+        </p>
+
+        <form id="feedbackForm">
+          <div class="form-group">
+            <label class="form-label" for="feedbackName">Nama Kamu</label>
+            <input
+              type="text"
+              class="form-input"
+              id="feedbackName"
+              placeholder="Masukkan nama..."
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="feedbackMsg">Pesan / Ulasan</label>
+            <textarea
+              class="form-textarea"
+              id="feedbackMsg"
+              placeholder="Tulis kritik, saran, atau pengalamanmu di sini..."
+              required
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-full">
+            Kirim Ulasan →
+          </button>
+        </form>
+      </div>
+
+      <!-- List Feedback -->
+      <div>
+        <h2 style="font-size:1.1rem;font-weight:600;margin-bottom:20px">
+          Ulasan Pengguna
+        </h2>
+
+        <!-- Diisi oleh JS -->
+        <div class="feedback-list" id="feedbackList">
+          <div class="feedback-empty">Belum ada ulasan. Jadilah yang pertama! 😊</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Yurei<span>.</span>Perfume</div>
+        <p class="footer-desc">Platform parfum online pilihan terbaik dari seluruh dunia.</p>
+      </div>
+      <div>
+        <div class="footer-heading">Halaman</div>
+        <ul class="footer-links">
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="cart.html">Keranjang</a></li>
+          <li><a href="feedback.html">Kritik & Saran</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-heading">Akun</div>
+        <ul class="footer-links">
+          <li><a href="login.html">Login</a></li>
+          <li><a href="register.html">Daftar</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Yurei.Perfume. Proyek Sekolah.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="toast-container" id="toastContainer"></div>
+<script src="js/script.js"></script>
+</body>
+</html>

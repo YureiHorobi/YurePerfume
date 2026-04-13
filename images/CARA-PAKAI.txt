@@ -1,0 +1,24 @@
+==============================================
+  YUREI.PERFUME — Panduan Mengganti Gambar
+==============================================
+
+Simpan file gambar parfummu di folder ini (images/)
+dengan nama file yang SAMA persis seperti di bawah:
+
+  oud-mystic.jpg        → Oud Mystic
+  nusantara-bloom.jpg   → Nusantara Bloom
+  noir-elegance.jpg     → Noir Élégance
+  desert-rose.jpg       → Desert Rose
+  sirih-pinang.jpg      → Sirih Pinang
+  blue-lumiere.jpg      → Blue Lumière
+  amber-khaleeji.jpg    → Amber Khaleeji
+  melati-putih.jpg      → Melati Putih
+
+Tips:
+- Format: JPG atau PNG (keduanya bisa)
+- Ukuran ideal: 500x500px atau 800x800px (persegi/1:1)
+- Jika gambar tidak ditemukan, akan muncul placeholder otomatis
+
+Jika ingin nama file berbeda, buka js/script.js
+dan ubah nilai "image" di array PRODUCTS sesuai nama filemu.
+==============================================
