@@ -85,4 +85,4 @@ Cukup buka file `index.html` langsung di browser (Google Chrome, Firefox, dsb).
 
 ---
 
-© 2025 Yurei.Perfume — Proyek Sekolah
+© 2025 Kelompok Yurei.Perfume
