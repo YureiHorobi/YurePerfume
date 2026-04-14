@@ -4,11 +4,16 @@
    Versi: Gambar lokal dari folder images/
    ============================================================ */
 
-// Add this import at the very top of script.js
-import { getFirestore, onSnapshot, doc } from "https://www.gstatic.com/firebasejs/10.x.x/firebase-firestore.js";
+
 
 // Your existing call will then work:
 // onSnapshot(doc(db, "collection", "id"), (doc) => { ... });
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+ // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.12.0/firebase-app.js";
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -24,7 +29,6 @@ import { getFirestore, onSnapshot, doc } from "https://www.gstatic.com/firebasej
 
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
-
 /* ===== DATA PRODUK DUMMY ===== */
 // Ganti nama file gambar sesuai file yang kamu simpan di folder images/
 const PRODUCTS = [
