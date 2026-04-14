@@ -4,6 +4,26 @@
    Versi: Gambar lokal dari folder images/
    ============================================================ */
 
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.12.0/firebase-app.js";
+import { 
+  getFirestore, 
+  collection, 
+  addDoc, 
+  onSnapshot 
+} from "https://www.gstatic.com/firebasejs/12.12.0/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDPbA3LeRS2YLW0sGh1KGvlAj7nxtdWgPQ",
+  authDomain: "yurei-perfume.firebaseapp.com",
+  projectId: "yurei-perfume",
+  storageBucket: "yurei-perfume.firebasestorage.app",
+  messagingSenderId: "801480198785",
+  appId: "1:801480198785:web:8081f90040a8dcb58c5b80"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
 /* ===== DATA PRODUK DUMMY ===== */
 // Ganti nama file gambar sesuai file yang kamu simpan di folder images/
 const PRODUCTS = [
@@ -576,50 +596,50 @@ function initFeedbackPage() {
   const form = document.getElementById("feedbackForm");
   if (!form) return;
 
-  function renderFeedbacks() {
-    const list  = document.getElementById("feedbackList");
-    const items = lsGet("yureiFeedbacks", []);
-    if (!list) return;
+  const list = document.getElementById("feedbackList");
 
-    if (items.length === 0) {
-      list.innerHTML = `<div class="feedback-empty">Belum ada ulasan. Jadilah yang pertama! 😊</div>`;
+  // 🔥 AMBIL DATA REALTIME
+  onSnapshot(collection(db, "komentar"), (snapshot) => {
+    let html = "";
+
+    snapshot.forEach((doc) => {
+      const data = doc.data();
+
+      html += `
+        <div class="feedback-item">
+          <div class="feedback-item-name">
+            <div class="avatar">${data.nama.charAt(0).toUpperCase()}</div>
+            ${data.nama}
+          </div>
+          <div class="feedback-item-msg">${data.pesan}</div>
+        </div>
+      `;
+    });
+
+    list.innerHTML = html || `<div class="feedback-empty">Belum ada ulasan 😊</div>`;
+  });
+
+  // 📩 KIRIM KOMENTAR
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const nama = document.getElementById("feedbackName").value.trim();
+    const pesan = document.getElementById("feedbackMsg").value.trim();
+
+    if (!nama || !pesan) {
+      showToast("Isi nama dan pesan dulu!", "error");
       return;
     }
 
-    list.innerHTML = items.slice().reverse().map(f => `
-      <div class="feedback-item">
-        <div class="feedback-item-name">
-          <div class="avatar">${f.name.charAt(0).toUpperCase()}</div>
-          ${f.name}
-        </div>
-        <div class="feedback-item-date">${f.date}</div>
-        <div class="feedback-item-msg">${f.message}</div>
-      </div>
-    `).join("");
-  }
-
-  form.addEventListener("submit", e => {
-    e.preventDefault();
-    const name    = document.getElementById("feedbackName").value.trim();
-    const message = document.getElementById("feedbackMsg").value.trim();
-
-    if (!name || !message) { showToast("Isi nama dan pesan terlebih dahulu!", "error"); return; }
-
-    const items = lsGet("yureiFeedbacks", []);
-    items.push({
-      name, message,
-      date: new Date().toLocaleDateString("id-ID", {
-        day: "numeric", month: "long", year: "numeric",
-        hour: "2-digit", minute: "2-digit",
-      }),
+    await addDoc(collection(db, "komentar"), {
+      nama: nama,
+      pesan: pesan,
+      waktu: new Date()
     });
-    lsSet("yureiFeedbacks", items);
-    form.reset();
-    renderFeedbacks();
-    showToast("Terima kasih atas ulasan Anda! 🌸", "success");
-  });
 
-  renderFeedbacks();
+    form.reset();
+    showToast("Ulasan berhasil dikirim! 🎉", "success");
+  });
 }
 
 /* ===== MODAL ===== */
