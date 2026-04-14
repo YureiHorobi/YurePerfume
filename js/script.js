@@ -4,25 +4,23 @@
    Versi: Gambar lokal dari folder images/
    ============================================================ */
 
-import { initializeApp } from "https://www.gstatic.com/firebasejs/12.12.0/firebase-app.js";
-import { 
-  getFirestore, 
-  collection, 
-  addDoc, 
-  onSnapshot 
-} from "https://www.gstatic.com/firebasejs/12.12.0/firebase-firestore.js";
+ // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.12.0/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
 
-const firebaseConfig = {
-  apiKey: "AIzaSyDPbA3LeRS2YLW0sGh1KGvlAj7nxtdWgPQ",
-  authDomain: "yurei-perfume.firebaseapp.com",
-  projectId: "yurei-perfume",
-  storageBucket: "yurei-perfume.firebasestorage.app",
-  messagingSenderId: "801480198785",
-  appId: "1:801480198785:web:8081f90040a8dcb58c5b80"
-};
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyDPbA3LeRS2YLW0sGh1KGvlAj7nxtdWgPQ",
+    authDomain: "yurei-perfume.firebaseapp.com",
+    projectId: "yurei-perfume",
+    storageBucket: "yurei-perfume.firebasestorage.app",
+    messagingSenderId: "801480198785",
+    appId: "1:801480198785:web:8081f90040a8dcb58c5b80"
+  };
 
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
 
 /* ===== DATA PRODUK DUMMY ===== */
 // Ganti nama file gambar sesuai file yang kamu simpan di folder images/
