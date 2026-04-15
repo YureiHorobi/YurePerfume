@@ -260,6 +260,8 @@ function addToCart(productId, qty = 1) {
   showToast(`"${product.name}" ditambahkan ke keranjang 🛒`, "success");
 }
 
+
+
 /** Ubah qty item di keranjang (qty <= 0 = hapus) */
 function updateCartQty(productId, newQty) {
   let cart = getCart();
@@ -650,12 +652,6 @@ function initModals() {
     });
   });
 }
-
-// expose function supaya bisa dipakai onclick HTML
-window.addToCart = addToCart;
-window.updateCartBadge = updateCartBadge;
-window.updateCartQty = updateCartQty;
-window.removeFromCart = removeFromCart;
 
 /* ===== INIT ===== */
 document.addEventListener("DOMContentLoaded", () => {
