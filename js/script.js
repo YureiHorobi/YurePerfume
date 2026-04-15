@@ -651,6 +651,12 @@ function initModals() {
   });
 }
 
+// expose function supaya bisa dipakai onclick HTML
+window.addToCart = addToCart;
+window.updateCartBadge = updateCartBadge;
+window.updateCartQty = updateCartQty;
+window.removeFromCart = removeFromCart;
+
 /* ===== INIT ===== */
 document.addEventListener("DOMContentLoaded", () => {
   updateCartBadge();
