@@ -261,12 +261,6 @@ function addToCart(productId, qty = 1) {
 }
 
 window.addToCart = addToCart;
-window.goToDetail = goToDetail;
-
-
-
-
-
 
 /** Ubah qty item di keranjang (qty <= 0 = hapus) */
 function updateCartQty(productId, newQty) {
