@@ -261,8 +261,6 @@ function addToCart(productId, qty = 1) {
 }
 
 window.addToCart = addToCart;
-window.goToDetail = goToDetail;
-}
 
 
 
@@ -301,17 +299,17 @@ function initHamburger() {
 
 /* ===== HOMEPAGE ===== */
 function initHomepage() {
-  if (!document.getElementById("productGrid")) return;
+  const grid = document.getElementById("productGrid");
+  if (!grid) return;
 
   let activeCategory = "all";
   let searchQuery    = "";
 
   function renderProducts() {
-    const grid    = document.getElementById("productGrid");
     const countEl = document.getElementById("productCount");
 
     const filtered = PRODUCTS.filter(p => {
-      const matchCat    = activeCategory === "all" || p.category === activeCategory;
+      const matchCat = activeCategory === "all" || p.category === activeCategory;
       const matchSearch =
         p.name.toLowerCase().includes(searchQuery) ||
         p.brand.toLowerCase().includes(searchQuery) ||
@@ -324,9 +322,7 @@ function initHomepage() {
     if (filtered.length === 0) {
       grid.innerHTML = `
         <div class="no-results">
-          <div class="no-results-icon">🔍</div>
           <h3>Produk tidak ditemukan</h3>
-          <p>Coba kata kunci lain atau pilih kategori berbeda.</p>
         </div>`;
       return;
     }
@@ -335,48 +331,26 @@ function initHomepage() {
       <div class="product-card" onclick="goToDetail(${p.id})">
         <div class="product-img-wrap">
           ${productImg(p.image, p.name)}
-          <span class="product-cat-badge">${CAT_LABELS[p.category].label}</span>
         </div>
         <div class="product-body">
-          <div class="product-name">${p.name}</div>
-          <div class="product-brand">${p.brand}</div>
-          <div class="product-price">${formatRupiah(p.price)}</div>
-          <div class="product-actions">
-            <button class="btn-add-cart" onclick="event.stopPropagation(); addToCart(${p.id})">
-              🛒 Keranjang
-            </button>
-            <button class="btn-detail" onclick="event.stopPropagation(); goToDetail(${p.id})">
-              Detail
-            </button>
-          </div>
+          <div>${p.name}</div>
+          <div>${formatRupiah(p.price)}</div>
+
+          <button onclick="event.stopPropagation(); addToCart(${p.id})">
+            🛒 Keranjang
+          </button>
         </div>
       </div>
     `).join("");
   }
 
+  // GLOBAL
   window.goToDetail = function(id) {
     window.location.href = `product.html?id=${id}`;
   };
 
-  document.querySelectorAll(".cat-tab").forEach(btn => {
-    btn.addEventListener("click", () => {
-      document.querySelectorAll(".cat-tab").forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-      activeCategory = btn.dataset.cat;
-      renderProducts();
-    });
-  });
-
-  const searchInput = document.getElementById("searchInput");
-  if (searchInput) {
-    searchInput.addEventListener("input", e => {
-      searchQuery = e.target.value.toLowerCase().trim();
-      renderProducts();
-    });
-  }
-
-  document.getElementById("searchBtn")?.addEventListener("click", () => {
-    searchQuery = searchInput?.value.toLowerCase().trim() || "";
+  document.getElementById("searchInput")?.addEventListener("input", e => {
+    searchQuery = e.target.value.toLowerCase();
     renderProducts();
   });
 
@@ -455,6 +429,7 @@ function initProductDetail() {
     addToCart(product.id, qty);
   });
 }
+window.addToCart = addToCart;
 
 /* ===== CART PAGE ===== */
 function initCartPage() {
