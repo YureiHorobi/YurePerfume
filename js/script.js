@@ -72,7 +72,7 @@ const PRODUCTS = [
     brand: "Afnan",
     category: "dubai",
     price: 569000,
-    image: "js/9pm.jpg",
+    image: "./js/9pm.jpg",
     desc: "Didominasi aroma apple, cinnamon, dan vanilla yang menonjol, memberikan kesan maskulin, sensual, dan cocok untuk malam hari.",
     volume: "100 ml",
     concentration: "Eau De Parfum",
