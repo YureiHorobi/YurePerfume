@@ -351,6 +351,7 @@ function initHomepage() {
   window.goToDetail = function(id) {
     window.location.href = `product.html?id=${id}`;
   };
+   window.goToDetail = goToDetail;
 
   document.querySelectorAll(".cat-tab").forEach(btn => {
     btn.addEventListener("click", () => {
