@@ -262,7 +262,7 @@ function addToCart(productId, qty = 1) {
 
 window.addToCart = addToCart;
 window.goToDetail = goToDetail;
-}
+
 
 
 
