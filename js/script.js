@@ -260,6 +260,12 @@ function addToCart(productId, qty = 1) {
   showToast(`"${product.name}" ditambahkan ke keranjang 🛒`, "success");
 }
 
+window.addToCart = addToCart;
+window.goToDetail = goToDetail;
+}
+
+
+
 
 
 /** Ubah qty item di keranjang (qty <= 0 = hapus) */
